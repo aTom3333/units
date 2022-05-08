@@ -2,8 +2,6 @@
 #define MAGNITUDE_HPP
 
 #include <cstdint>
-#include <cmath>
-#include <ratio>
 #include "power.hpp"
 #include "primes.hpp"
 #include "type_name.hpp"
@@ -86,8 +84,8 @@ namespace units
         {
             template<typename PowFactorType1, typename PowFactorType2>
             constexpr auto
-            operator()(const PowFactorType1& pow_factor_type1,
-                       const PowFactorType2& pow_factor_type2) const
+            operator()(const PowFactorType1&,
+                       const PowFactorType2&) const
             {
                 using PowFactor1 = typename PowFactorType1::type;
                 using PowFactor2 = typename PowFactorType2::type;

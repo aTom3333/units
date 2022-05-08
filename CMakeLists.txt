@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(sycl_units)
-
-set(CMAKE_CXX_STANDARD 17)
+project(units)
 
 add_library(units INTERFACE)
 
@@ -18,5 +16,9 @@ target_sources(
               include/units/type_name.hpp
               include/units/unit.hpp
 )
-
+target_compile_features(units INTERFACE cxx_std_17)
 target_include_directories(units INTERFACE include)
+
+add_library(units::units ALIAS units)
+
+add_subdirectory(tests)

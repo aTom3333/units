@@ -100,13 +100,13 @@ namespace meta
         static constexpr auto empty() { return size() == val<0>; }
 
         template<typename T>
-        constexpr auto append(const TypeConstant<T>& elem) const
+        constexpr auto append(const TypeConstant<T>&) const
         {
             return typelist<Ts..., T>{};
         }
 
         template<typename T>
-        constexpr auto prepend(const TypeConstant<T>& elem) const
+        constexpr auto prepend(const TypeConstant<T>&) const
         {
             return typelist<T, Ts...>{};
         }

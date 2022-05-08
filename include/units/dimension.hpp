@@ -71,8 +71,8 @@ namespace units
         struct DimensionComparator
         {
             template<typename PowDimType1, typename PowDimType2>
-            constexpr auto operator()(const PowDimType1& pow_dim_type1,
-                                      const PowDimType2& pow_dim_type2) const
+            constexpr auto operator()(const PowDimType1&,
+                                      const PowDimType2&) const
             {
                 using PowDim1 = typename PowDimType1::type;
                 using PowDim2 = typename PowDimType2::type;
